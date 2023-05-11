@@ -1,0 +1,15 @@
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: 100% / 12 * $i;
+    }
+}
+
+.container {
+    max-width: 1296px;
+}
+
+@media screen and (max-width: 428px) {
+    .container {
+        width: 332px;
+    }
+}
