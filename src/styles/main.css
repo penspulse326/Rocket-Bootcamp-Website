@@ -55,8 +55,9 @@ table {
 
 body {
   font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
   line-height: 150%;
-  letter-spacing: 2%;
+  letter-spacing: 0.02rem;
 }
 
 img {
@@ -172,4 +173,95 @@ h4 {
   .container {
     width: 332px;
   }
+}
+nav {
+  position: fixed;
+  top: 0;
+  padding: 20px 0;
+  max-width: 100%;
+  background: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+nav .news-ticker:nth-child(1) {
+  font-size: 14px;
+}
+nav ul {
+  display: flex;
+}
+
+.noto {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.marquee {
+  margin: 0 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  background: url("../images/banner-bg.png");
+  line-height: 1.75;
+}
+
+.btn-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 160px;
+}
+
+.btn {
+  margin-top: 190px;
+  width: 440px;
+  background: white;
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid #E0E0E0;
+}
+.btn .btn-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -44px;
+}
+.btn .btn-subtitle {
+  margin-bottom: 24px;
+  color: #9A9A9A;
+  font-size: 24px;
+}
+.btn .btn-logo {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 3px solid #CDCDCD;
+  border-radius: 50%;
+}
+.btn .btn-logo img {
+  display: block;
+  border-radius: 50%;
+}
+.btn p {
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+.btn .btn-toggle {
+  margin-bottom: -50px;
+}
+
+.semi-circle {
+  z-index: -99;
+  width: 120px;
+  height: 60px;
+  background-color: #BFC9F0;
+  border-radius: 0 0 120px 120px;
+}
+
+.about-rocket {
+  height: 712px;
+  background-color: #E5EBFF;
 }/*# sourceMappingURL=main.css.map */

@@ -10,9 +10,11 @@
 
 // 全局樣式
 body {
-  font-family: "Noto Sans TC", sans-serif;
+  @include font-noto();
+
+  font-size: 16px;
   line-height: 150%;
-  letter-spacing: 2%;
+  letter-spacing: 0.02rem;
 }
 
 img {
