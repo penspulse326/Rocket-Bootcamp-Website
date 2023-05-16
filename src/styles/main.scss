@@ -3,9 +3,18 @@
 @import "variables";
 @import "grid";
 
+* {
+  color: $grey-700;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 nav {
   position: fixed;
   top: 0;
+  z-index: 99;
 
   padding: 20px 0;
   max-width: 100%;
@@ -27,34 +36,46 @@ nav {
   @include font-noto;
 }
 
+.josefin {
+  @include font-josefin;
+}
+
 .marquee {
   margin: 0 1rem;
 
-  @include font-josefin;
   font-weight: 700;
 }
 
 .banner {
-  display: flex;
-  justify-content: space-between;
-
   background: url("../images/banner-bg.png");
 
   line-height: 1.75;
+
+  .row {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .btn-wrapper {
   position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   margin-bottom: 160px;
+  width: calc(86 / 1296 * 4 * 100% + $gutter);
+
+  &:hover {
+    transform: translateY(-16px);
+  }
 }
 
 .btn {
   margin-top: 190px;
-  width: 440px;
+  width: 100%;
 
   background: white;
 
@@ -85,6 +106,10 @@ nav {
 
     img {
       display: block;
+
+      width: 100px;
+      height: 100px;
+
       border-radius: 50%;
     }
   }
@@ -97,19 +122,120 @@ nav {
   }
 }
 
+.btn-splitter {
+  text-align: center;
+  font-size: 72px;
+}
+
 .semi-circle {
   z-index: -99;
   width: 120px;
   height: 60px;
-  background-color: $primary-1-200;
+
   border-radius: 0 0 120px 120px;
 }
 
 .btn-rocket {
+  .semi-circle {
+    background-color: $primary-1-200;
+  }
+}
+
+.btn-space {
+  .semi-circle {
+    background-color: $primary-2-200;
+  }
 }
 
 .about-rocket {
-  height: 712px;
+  padding: 60px 0;
 
   background-color: $primary-1-100;
+
+  line-height: 1.5;
+
+  .row {
+    justify-content: space-between;
+  }
+}
+
+.about-rocket-content {
+  span {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  h1 {
+    margin-bottom: 40px;
+
+    font-weight: 700;
+  }
+}
+
+.card-job {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 36px;
+
+  background-color: white;
+}
+
+.job-image {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 170px;
+  height: 208px;
+
+  background: $grey-200;
+
+  img {
+    position: relative;
+    left: -56px;
+  }
+}
+
+.jobs {
+  height: 592px;
+  overflow: auto;
+
+  & li:nth-last-child(1) {
+    margin: 0px;
+  }
+}
+
+.card-job {
+  margin-bottom: 32px;
+
+  h3 {
+    margin-bottom: 12px;
+  }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  span {
+    color: $grey-500;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.tags {
+  display: flex;
+  li {
+    padding: 8px 16px;
+    margin-right: 12px;
+
+    color: $primary-1-400;
+    font-weight: 700;
+
+    border: 2px solid $primary-1-400;
+    border-radius: 24px;
+  }
 }
