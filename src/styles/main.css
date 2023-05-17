@@ -54,9 +54,9 @@ table {
 }
 
 body {
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   letter-spacing: 0.02rem;
 }
 
@@ -91,6 +91,10 @@ h4 {
   font-weight: 700;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 @media screen and (max-width: 428px) {
   h1 {
     font-size: 32px;
@@ -105,6 +109,10 @@ h4 {
     font-size: 20px;
   }
 }
+.bd-ex {
+  border-radius: 50px;
+}
+
 .bd-xl {
   border-radius: 40px;
 }
@@ -198,22 +206,35 @@ h4 {
   max-width: 1296px;
 }
 
-.row {
-  display: flex;
-  width: 100%;
-}
-
 @media screen and (max-width: 428px) {
   .container {
     width: 332px;
   }
 }
+.row {
+  display: flex;
+  width: 100%;
+}
+
 * {
   color: #363636;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+ol li {
+  margin-left: 1em;
+  text-indent: -1em;
+}
+
+.text-highlight {
+  box-shadow: inset 0 -14px #ffeea3;
 }
 
 nav {
@@ -233,17 +254,8 @@ nav ul {
   display: flex;
 }
 
-.noto {
-  font-family: "Noto Sans TC", sans-serif;
-}
-
-.josefin {
-  font-family: "Josefin Sans", sans-serif;
-}
-
 .marquee {
   margin: 0 1rem;
-  font-weight: 700;
 }
 
 .banner {
@@ -273,7 +285,6 @@ nav ul {
   width: 100%;
   background: white;
   text-align: center;
-  font-weight: 700;
   border: 2px solid #e0e0e0;
 }
 .btn .btn-content {
@@ -338,11 +349,9 @@ nav ul {
 
 .about-rocket-content span {
   font-size: 1.25rem;
-  font-weight: 700;
 }
 .about-rocket-content h1 {
   margin-bottom: 40px;
-  font-weight: 700;
 }
 
 .card-job {
@@ -388,7 +397,6 @@ nav ul {
 .card-info span {
   color: #9a9a9a;
   font-size: 1.5rem;
-  font-weight: 700;
 }
 
 .tags {
@@ -398,7 +406,127 @@ nav ul {
   padding: 8px 16px;
   margin-right: 12px;
   color: #7f94e2;
-  font-weight: 700;
   border: 2px solid #7f94e2;
   border-radius: 24px;
+}
+
+.example {
+  margin-top: 92px;
+  margin-bottom: 120px;
+}
+.example .row {
+  flex-direction: column;
+  align-items: center;
+}
+.example ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.example ul li {
+  margin-top: 28px;
+}
+
+.bootcamp {
+  background-color: #f8f9fd;
+}
+.bootcamp .row {
+  flex-direction: column;
+  align-items: center;
+}
+.bootcamp h2 {
+  margin-top: -28px;
+  margin-bottom: 12px;
+}
+
+.bootcamp-time {
+  padding: 16px 20px;
+  background: white;
+  box-shadow: 0px 2px 4px #e8e8e8;
+  text-align: left;
+}
+.bootcamp-time .stick {
+  margin: 0 11px;
+  border-left: 2px solid #f0f0f0;
+}
+
+.bootcamp-jobs .card-bootcamp-jobs:nth-child(1) img {
+  margin-left: 48px;
+  margin-right: 32px;
+}
+.bootcamp-jobs .card-bootcamp-jobs:nth-child(2) img {
+  margin-left: -8px;
+  margin-right: 60px;
+}
+.bootcamp-jobs .card-bootcamp-jobs:nth-child(3) img {
+  margin-left: 35px;
+  margin-right: 70px;
+}
+
+.card-bootcamp-jobs {
+  padding: 0 48px;
+  padding-bottom: 40px;
+  margin-top: 80px;
+  background-color: white;
+  background-image: url("../images/training-bg.png");
+  border: 2px solid #f0f0f0;
+}
+.card-bootcamp-jobs .jobs-title {
+  position: relative;
+  top: -32px;
+}
+.card-bootcamp-jobs .jobs-title span {
+  display: inline-block;
+  padding: 12px 40px;
+  margin-left: -8px;
+  background-color: white;
+  border: 2px solid #363636;
+  box-shadow: 4px 4px 0 0 #363636;
+  font-size: 24px;
+}
+.card-bootcamp-jobs .job-content {
+  display: flex;
+  align-items: center;
+}
+
+.bootcamp-job-info .info-title {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 20px;
+  border-bottom: 3px solid #363636;
+}
+.bootcamp-job-info p,
+.bootcamp-job-info ol {
+  margin-bottom: 36px;
+}
+.bootcamp-job-info li:nth-last-child(1) ol {
+  margin-bottom: 0;
+}
+
+.bootcamp-coach {
+  margin-top: 64px;
+}
+.bootcamp-coach h2 {
+  margin-top: 0;
+}
+
+.bootcamp-coach-list {
+  display: flex;
+  margin-top: 16px;
+}
+.bootcamp-coach-list li {
+  display: flex;
+  align-items: flex-end;
+  height: 160px;
+  background-color: #e5ebff;
+  border: 2px solid #363636;
+}
+.bootcamp-coach-list .coach-name {
+  display: inline-block;
+  padding: 16px;
+  background-color: white;
+  border: 2px solid #363636;
+  border-radius: 12px;
+  letter-spacing: 1rem;
+  writing-mode: vertical-lr;
 }/*# sourceMappingURL=main.css.map */

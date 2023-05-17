@@ -17,15 +17,15 @@
   max-width: 1296px;
 }
 
-.row {
-  display: flex;
-  width: 100%;
-}
-
 @media screen and (max-width: 428px) {
   .container {
     width: 332px;
   }
+}
+
+.row {
+  display: flex;
+  width: 100%;
 }
 
 $gutter: 24px;
