@@ -54,10 +54,11 @@ table {
 }
 
 body {
+  position: relative;
   font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.02em;
 }
 
 img {
@@ -341,7 +342,6 @@ nav ul {
 .about-rocket {
   padding: 60px 0;
   background-color: #e5ebff;
-  line-height: 1.5;
 }
 .about-rocket .row {
   justify-content: space-between;
@@ -435,7 +435,7 @@ nav ul {
   align-items: center;
 }
 .bootcamp h2 {
-  margin-top: -28px;
+  margin-top: -24px;
   margin-bottom: 12px;
 }
 
@@ -473,16 +473,18 @@ nav ul {
 }
 .card-bootcamp-jobs .jobs-title {
   position: relative;
-  top: -32px;
+  top: -30px;
 }
 .card-bootcamp-jobs .jobs-title span {
   display: inline-block;
-  padding: 12px 40px;
+  padding: 0 40px;
   margin-left: -8px;
+  height: 60px;
   background-color: white;
   border: 2px solid #363636;
   box-shadow: 4px 4px 0 0 #363636;
   font-size: 24px;
+  line-height: 60px;
 }
 .card-bootcamp-jobs .job-content {
   display: flex;
@@ -512,21 +514,137 @@ nav ul {
 
 .bootcamp-coach-list {
   display: flex;
-  margin-top: 16px;
+  justify-content: space-between;
+  margin-bottom: 28px;
 }
 .bootcamp-coach-list li {
   display: flex;
+  justify-content: center;
   align-items: flex-end;
   height: 160px;
-  background-color: #e5ebff;
+  background-color: white;
   border: 2px solid #363636;
 }
+.bootcamp-coach-list li div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 180px;
+}
+.bootcamp-coach-list li img {
+  max-height: 180px;
+}
 .bootcamp-coach-list .coach-name {
-  display: inline-block;
-  padding: 16px;
+  align-self: flex-start;
+  padding: 16px 0;
+  margin-top: -24px;
+  margin-right: 20px;
+  width: 48px;
   background-color: white;
   border: 2px solid #363636;
   border-radius: 12px;
-  letter-spacing: 1rem;
-  writing-mode: vertical-lr;
+  line-height: 48px;
+  letter-spacing: 0.5rem;
+  writing-mode: vertical-rl;
+}
+
+.coach-exp span {
+  font-size: 24px;
+}
+.coach-exp ul {
+  margin-top: 12px;
+  margin-left: 1.5em;
+  margin-bottom: 80px;
+  list-style-type: disc;
+}
+.coach-exp ul li {
+  line-height: 1.75;
+}
+.coach-exp .btn-regist {
+  margin-bottom: -48px;
+  height: 96px;
+  background-color: #e5ebff;
+  border: 2px solid #363636;
+  text-align: center;
+  line-height: 96px;
+  cursor: pointer;
+}
+
+.qna .row {
+  flex-direction: column;
+  align-items: center;
+}
+.qna ul:nth-child(1) {
+  margin-top: 128px;
+}
+.qna ul:nth-child(2) {
+  margin-top: 80px;
+  margin-bottom: 128px;
+}
+.qna h2 {
+  border-bottom: 2px solid #f0f0f0;
+}
+.qna li {
+  display: flex;
+  padding: 20px;
+  border-width: 2px 0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.qna-number {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #e5ebff;
+  border: 2px solid #363636;
+  font-size: 14px;
+  text-align: center;
+}
+
+.qna-content {
+  padding-top: 2px;
+  margin-left: 32px;
+}
+.qna-content div {
+  margin-bottom: 8px;
+}
+
+.sponsor-title {
+  position: relative;
+  z-index: 99;
+  bottom: -32px;
+}
+
+.sponsor {
+  position: relative;
+  background-color: #f0f0f0;
+  overflow-x: scroll;
+}
+.sponsor .row {
+  flex-direction: column;
+}
+
+.sponsor-list {
+  position: relative;
+  display: flex;
+  margin-top: 56px;
+}
+.sponsor-list li {
+  flex-shrink: 0;
+  margin-right: 24px;
+}
+.sponsor-list li div:nth-last-child(1) {
+  margin-top: 4px;
+}
+.sponsor-list li:nth-last-child(1) {
+  margin-right: 0;
+}
+.sponsor-list .sponsor-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  height: 148px;
+  background-color: white;
+  border-radius: 12px;
 }/*# sourceMappingURL=main.css.map */

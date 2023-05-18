@@ -154,8 +154,6 @@ nav {
 
   background-color: $primary-1-100;
 
-  line-height: 1.5;
-
   .row {
     justify-content: space-between;
   }
@@ -266,7 +264,7 @@ nav {
   }
 
   h2 {
-    margin-top: -28px;
+    margin-top: -24px;
     margin-bottom: 12px;
   }
 }
@@ -317,18 +315,21 @@ nav {
 
   .jobs-title {
     position: relative;
-    top: -32px;
+    top: -30px;
 
     span {
       display: inline-block;
-      padding: 12px 40px;
+
+      padding: 0 40px;
       margin-left: -8px;
+      height: 60px;
 
       background-color: white;
       border: 2px solid $grey-700;
       box-shadow: 4px 4px 0 0 $grey-700;
 
       font-size: 24px;
+      line-height: 60px;
     }
   }
 
@@ -369,28 +370,175 @@ nav {
 
 .bootcamp-coach-list {
   display: flex;
-  margin-top: 16px;
+  justify-content: space-between;
+  margin-bottom: 28px;
 
   li {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
+
     height: 160px;
 
-    background-color: $primary-1-100;
+    background-color: white;
     border: 2px solid $grey-700;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      width: 180px;
+    }
+    img {
+      max-height: 180px;
+    }
   }
 
   .coach-name {
-    display: inline-block;
+    align-self: flex-start;
 
-    padding: 16px;
+    padding: 16px 0;
+    margin-top: -24px;
+    margin-right: 20px;
+    width: 48px;
 
     background-color: white;
     border: 2px solid $grey-700;
     border-radius: 12px;
 
-    letter-spacing: 1rem;
-    -webkit-writing-mode: vertical-lr;
-    writing-mode: vertical-lr;
+    line-height: 48px;
+    letter-spacing: 0.5rem;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+  }
+}
+
+.coach-exp {
+  span {
+    font-size: 24px;
+  }
+  ul {
+    margin-top: 12px;
+    margin-left: 1.5em;
+    margin-bottom: 80px;
+
+    list-style-type: disc;
+
+    li {
+      line-height: 1.75;
+    }
+  }
+
+  .btn-regist {
+    margin-bottom: -48px;
+    height: 96px;
+
+    background-color: $primary-1-100;
+    border: 2px solid $grey-700;
+
+    text-align: center;
+
+    line-height: 96px;
+    cursor: pointer;
+  }
+}
+
+.qna {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul:nth-child(1) {
+    margin-top: 128px;
+  }
+
+  ul:nth-child(2) {
+    margin-top: 80px;
+    margin-bottom: 128px;
+  }
+  h2 {
+    border-bottom: 2px solid $grey-200;
+  }
+  li {
+    display: flex;
+
+    padding: 20px;
+
+    border-width: 2px 0;
+    border-bottom: 2px solid $grey-200;
+  }
+}
+
+.qna-number {
+  flex-shrink: 0;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: $primary-1-100;
+  border: 2px solid $grey-700;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.qna-content {
+  padding-top: 2px;
+  margin-left: 32px;
+
+  div {
+    margin-bottom: 8px;
+  }
+}
+
+.sponsor-title {
+  position: relative;
+  z-index: 99;
+  bottom: -32px;
+}
+
+.sponsor {
+  position: relative;
+  background-color: $grey-200;
+
+  overflow-x: scroll;
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+.sponsor-list {
+  position: relative;
+
+  display: flex;
+
+  margin-top: 56px;
+
+  li {
+    flex-shrink: 0;
+    margin-right: 24px;
+
+    div:nth-last-child(1) {
+      margin-top: 4px;
+    }
+  }
+
+  li:nth-last-child(1) {
+    margin-right: 0;
+  }
+
+  .sponsor-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 16px;
+    height: 148px;
+
+    background-color: white;
+    border-radius: 12px;
   }
 }
