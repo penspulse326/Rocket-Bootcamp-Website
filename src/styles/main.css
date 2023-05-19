@@ -161,6 +161,9 @@ body {
   letter-spacing: 0.02em;
 }
 
+a {
+  color: #363636;
+}
 a:visited {
   color: #363636;
 }
@@ -338,6 +341,10 @@ nav span {
 .btn-splitter {
   text-align: center;
   font-size: 72px;
+}
+
+.page {
+  display: none;
 }
 
 .about {
@@ -534,6 +541,9 @@ nav span {
   background-color: white;
   border: 2px solid #363636;
 }
+.bootcamp-coach-list li:nth-child(1) div {
+  background-color: #e5ebff;
+}
 .bootcamp-coach-list .coach-name {
   align-self: flex-start;
   padding: 16px 0;
@@ -623,7 +633,6 @@ nav span {
 
 .sponsor-title {
   position: relative;
-  z-index: 99;
   bottom: -32px;
 }
 
@@ -654,7 +663,7 @@ nav span {
   margin-right: 24px;
 }
 .sponsor-list li div:nth-last-child(1) {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 .sponsor-list li:nth-last-child(1) {
   margin-right: 0;

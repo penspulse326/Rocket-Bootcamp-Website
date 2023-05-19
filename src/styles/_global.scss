@@ -21,9 +21,13 @@ body {
   letter-spacing: 0.02em;
 }
 
-a:visited {
+a {
   color: $grey-700;
+  &:visited {
+    color: $grey-700;
+  }
 }
+
 
 img {
   max-width: 100%;
