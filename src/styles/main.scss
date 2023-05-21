@@ -456,19 +456,28 @@ nav {
 }
 
 .btn-regist {
+  margin-bottom: -48px;
+
+  background-color: $primary-1-100;
+}
+
+.btn-form {
+  background-color: $primary-2-100;
+}
+
+.btn-lg {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-bottom: -48px;
-  height: 96px;
+  padding: 16px;
 
-  background-color: $primary-1-100;
   border: 2px solid $grey-700;
 
   font-size: 36px;
   text-align: center;
   text-decoration: none;
+  line-height: normal;
 
   cursor: pointer;
 
@@ -481,7 +490,10 @@ nav {
   img {
     margin-left: 20px;
     width: 0;
+    height: 64px;
+
     opacity: 0;
+    vertical-align: middle;
 
     transition: all 0.3s ease;
   }
@@ -629,7 +641,6 @@ footer {
 }
 
 .space-display {
-  overflow: hidden;
   .row {
     flex-direction: column;
   }
@@ -710,5 +721,116 @@ footer {
         font-size: 14px;
       }
     }
+  }
+}
+
+.carousel-wrapper {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+
+  margin-bottom: 80px;
+
+  li {
+    flex-shrink: 0;
+
+    margin-right: $gutter;
+    max-width: calc(86px * 6 + $gutter * 5);
+    width: calc(((86 + 24) * 6 - 24) / 1296 * 100%);
+  }
+}
+
+.plan {
+  position: relative;
+
+  background-color: $primary-2-200;
+}
+
+.plan-wrapper {
+  max-width: 100%;
+
+  .plan-info {
+    margin-top: 60px;
+    margin-bottom: 36px;
+
+    line-height: normal;
+
+    h2 {
+      margin-bottom: 8px;
+    }
+  }
+
+  .plan-hint {
+    display: inline-block;
+    padding: 16px 16px 32px 16px;
+    margin-bottom: 12px;
+    margin-left: 80px;
+
+    background-image: url("../images/promotion-lg.svg");
+    background-repeat: no-repeat;
+
+    text-align: center;
+  }
+
+  .plan-cards {
+    display: flex;
+
+    margin-bottom: 40px;
+
+    .plan-card:nth-child(1) {
+      margin-right: 24px;
+    }
+
+    .plan-card {
+      padding: 36px 80px;
+
+      background-color: white;
+      opacity: 0.5;
+
+      text-align: center;
+
+      &:hover {
+        opacity: 1;
+        border: 2px solid $grey-700;
+      }
+
+      div {
+        margin-bottom: 20px;
+
+        font-size: 24px;
+      }
+
+      h2 {
+        padding: 40px;
+        margin-bottom: 28px;
+
+        background-color: $grey-200;
+
+        white-space: nowrap;
+      }
+
+      ul {
+        text-align: left;
+        font-size: 20px;
+        line-height: normal;
+
+        li {
+          display: flex;
+          align-items: center;
+          img {
+            margin-right: 16px;
+          }
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  a {
+    margin-bottom: 80px;
   }
 }

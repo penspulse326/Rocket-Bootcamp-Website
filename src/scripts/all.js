@@ -193,18 +193,27 @@ const expContent = [
   `,
 ];
 
-/*gsap.fromTo(
-  ".carousel",
-  {
-    xPercent: -33,
-  },
-  {
-    xPercent: 33,
-    duration: 1,
-    repeatDelay: 0.5,
-    repeat: -1,
-    yoyo: "true",
-    ease: "none",
-  }
-);
-*/
+let totalWidth = -24;
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 在此處放置取得元素寬度的程式碼
+  const carouselItems = document.querySelectorAll(".carousel li");
+  carouselItems.forEach((item) => {
+    totalWidth += item.offsetWidth + 24;
+  });
+
+  gsap.fromTo(
+    ".carousel",
+    {
+      x: 0,
+    },
+    {
+      x: -totalWidth + window.innerWidth,
+      duration: 20,
+      repeatDelay: 1.5,
+      repeat: -1,
+      yoyo: "true",
+      ease: "none",
+    }
+  );
+});
