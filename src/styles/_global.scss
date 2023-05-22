@@ -1,5 +1,6 @@
 // 載入外部字體
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;700&display=swap");
+
 // 全局樣式
 *,
 *::after,
@@ -18,7 +19,6 @@ body {
   font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
   font-size: 16px;
 
-  line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
@@ -43,6 +43,8 @@ ol {
   }
 }
 
+// text
+
 h1 {
   font-size: 48px;
   font-weight: 700;
@@ -60,6 +62,14 @@ h4 {
   font-weight: 700;
 }
 
+.fz-lg {
+  font-size: 24px;
+}
+
+.fz-md {
+  font-size: 20px;
+}
+
 @media screen and (max-width: 428px) {
   h1 {
     font-size: 32px;
@@ -72,5 +82,11 @@ h4 {
   }
   h4 {
     font-size: 20px;
+  }
+  .fz-lg {
+    font-size: 20px;
+  }
+  .fz-md {
+    font-size: 18px;
   }
 }

@@ -6,13 +6,13 @@ window.addEventListener("load", () => {
 const banner = document.querySelector(".banner");
 
 banner.addEventListener("click", (e) => {
-  const targetBtn = e.target.closest(".btn-wrapper");
+  const targetBtn = e.target.closest(".banner-btn");
 
   if (targetBtn) {
     // clear btn style
-    document.querySelectorAll(".btn-wrapper").forEach((item) => {
+    document.querySelectorAll(".banner-btn").forEach((item) => {
       item.style = "opacity : 0.5";
-      item.querySelector(".btn").style = "box-shadow:  0";
+      item.querySelector(".banner-btn-content").style = "box-shadow:  0";
       item.querySelector(".btn-highlight").style = "display: none";
     });
 
@@ -23,16 +23,18 @@ banner.addEventListener("click", (e) => {
 
 function toggleBtn(btnName, element) {
   element.style = "opacity : 1";
-  element.querySelector(".btn").style = `box-shadow:  8px 8px 0px 0px ${
-    btnName === "btn-rocket" ? "#bfc9f0" : "#eee5ff"
+  element.querySelector(
+    ".banner-btn-content"
+  ).style = `box-shadow:  8px 8px 0px 0px ${
+    btnName === "banner-rocket" ? "#bfc9f0" : "#eee5ff"
   } `;
   element.querySelector(".btn-highlight").style = "display: inline";
 
-  if (btnName === "btn-rocket") {
+  if (btnName === "banner-rocket") {
     document.querySelector(".page-rocket").style = "display: block";
     document.querySelector(".page-space").style = "display: none";
   }
-  if (btnName === "btn-space") {
+  if (btnName === "banner-space") {
     document.querySelector(".page-rocket").style = "display: none";
     document.querySelector(".page-space").style = "display: block";
   }
