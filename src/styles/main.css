@@ -506,6 +506,7 @@ nav ul span {
 .about-wrapper {
   padding: 60px 72px;
   line-height: 1.5;
+  border-radius: 40px;
 }
 .about-wrapper .row {
   justify-content: space-between;
@@ -526,10 +527,12 @@ nav ul span {
   .about-wrapper {
     display: flex;
     justify-content: center;
-    padding: 36px 48px;
+    padding: 36px 0px;
+    border-radius: 24px;
   }
   .about-wrapper .row {
     justify-content: flex-start;
+    max-width: 332px;
   }
   .about-wrapper .about-text {
     margin-bottom: 24px;
@@ -755,6 +758,9 @@ nav ul span {
   background-image: url("../images/training-bg.png");
   border: 2px solid #f0f0f0;
 }
+.bootcamp-jobs .card-bootcamp-jobs .job-wrapper {
+  width: 100%;
+}
 .bootcamp-jobs .card-bootcamp-jobs .job-title {
   margin-top: calc(-1em - 12px);
   margin-bottom: 32px;
@@ -798,10 +804,14 @@ nav ul span {
     transform: scale(0.76);
   }
   .bootcamp-jobs .card-bootcamp-jobs {
-    padding: 0 48px;
+    padding: 0;
     border-left: 0;
     border-right: 0;
     border-radius: 0;
+  }
+  .bootcamp-jobs .card-bootcamp-jobs .job-wrapper {
+    margin: 0 auto;
+    max-width: 332px;
   }
   .bootcamp-jobs .card-bootcamp-jobs .job-title {
     margin-top: calc(-1em - 20px);
@@ -838,8 +848,7 @@ nav ul span {
 }
 @media screen and (max-width: 428px) {
   .bootcamp-coaches {
-    padding: 0 48px;
-    width: 100%;
+    max-width: 332px;
   }
   .bootcamp-coaches h2 {
     margin-bottom: 30px;
@@ -906,8 +915,7 @@ nav ul span {
     height: 220px;
   }
   .bootcamp-coach-list li:hover .coach-name {
-    transform: translateY(-16px);
-    transition: 0.3s;
+    transform: none;
   }
   .bootcamp-coach-list li:nth-child(1) div {
     background-color: #e5ebff;
@@ -927,7 +935,7 @@ nav ul span {
   animation-fill-mode: forwards;
 }
 .coach-exp span {
-  font-size: 24px;
+  font-size: 1.25rem;
 }
 .coach-exp ul {
   margin-top: 12px;
@@ -937,6 +945,11 @@ nav ul span {
 }
 .coach-exp ul li {
   line-height: 1.75;
+}
+@media screen and (max-width: 428px) {
+  .coach-exp ul {
+    margin-bottom: 40px;
+  }
 }
 
 .btn-regist {
@@ -980,6 +993,18 @@ nav ul span {
   width: auto;
   opacity: 1;
 }
+@media screen and (max-width: 428px) {
+  .btn-lg {
+    padding: 20px;
+    font-size: 24px;
+  }
+  .btn-lg span {
+    right: 0;
+  }
+  .btn-lg img {
+    display: none;
+  }
+}
 
 .qna .row {
   flex-direction: column;
@@ -995,14 +1020,16 @@ nav ul span {
 .qna h2 {
   border-bottom: 2px solid #f0f0f0;
 }
-.qna li {
+.qna ul {
+  line-height: 1.5;
+}
+.qna ul li {
   display: flex;
   padding: 20px;
   border-width: 2px 0;
   border-bottom: 2px solid #f0f0f0;
 }
-
-.qna-number {
+.qna .qna-number {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
@@ -1011,18 +1038,41 @@ nav ul span {
   font-size: 14px;
   text-align: center;
 }
-
-.qna-content {
+.qna .qna-content {
   padding-top: 2px;
   margin-left: 32px;
 }
-.qna-content div {
+.qna .qna-content div {
   margin-bottom: 8px;
+}
+@media screen and (max-width: 428px) {
+  .qna ul:nth-child(1) {
+    margin-top: 84px;
+  }
+  .qna ul:nth-child(2) {
+    margin-top: 48px;
+    margin-bottom: 76px;
+  }
+  .qna h2 {
+    border-bottom: 2px solid #f0f0f0;
+  }
+  .qna ul li {
+    display: flex;
+    padding: 20px 0px;
+  }
+  .qna .qna-content {
+    margin-left: 16px;
+  }
 }
 
 .sponsor-title {
   position: relative;
   bottom: -32px;
+}
+@media screen and (max-width: 428px) {
+  .sponsor-title {
+    bottom: -20px;
+  }
 }
 
 .sponsor {
@@ -1057,10 +1107,6 @@ nav ul span {
 .sponsor-list li:nth-last-child(1) {
   margin-right: 0;
 }
-.sponsor-list li:nth-last-child(1):hover {
-  transition: 0.3s;
-  transform: translateX(-100%);
-}
 .sponsor-list .sponsor-img {
   display: flex;
   justify-content: center;
@@ -1070,10 +1116,44 @@ nav ul span {
   background-color: white;
   border-radius: 12px;
 }
+@media screen and (max-width: 428px) {
+  .sponsor-list {
+    margin-top: 36px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .sponsor-list .sponsor-img {
+    margin-bottom: 12px;
+    height: 120px;
+  }
+  .sponsor-list .sponsor-img img {
+    transform: scale(0.8);
+  }
+  .sponsor-list li:nth-last-child(1) {
+    margin-right: 20px;
+  }
+}
 
 footer {
+  position: relative;
+  bottom: 0;
   padding: 36px 0;
   text-align: center;
+}
+footer span:nth-child(2) {
+  display: none;
+}
+@media screen and (max-width: 428px) {
+  footer {
+    padding: 20px;
+    line-height: 1.75;
+  }
+  footer span:nth-child(1) {
+    display: none;
+  }
+  footer span:nth-child(2) {
+    display: inline;
+  }
 }
 
 .map {

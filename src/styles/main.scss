@@ -251,6 +251,7 @@ nav {
   padding: 60px 72px;
 
   line-height: 1.5;
+  @include bd-ex;
 
   .row {
     justify-content: space-between;
@@ -276,10 +277,13 @@ nav {
     display: flex;
     justify-content: center;
 
-    padding: 36px 48px;
+    padding: 36px 0px;
 
+    @include bd-lg;
     .row {
       justify-content: flex-start;
+
+      max-width: 332px;
     }
 
     .about-text {
@@ -562,6 +566,10 @@ nav {
     background-image: url("../images/training-bg.png");
     border: 2px solid $grey-200;
 
+    .job-wrapper {
+      width: 100%;
+    }
+
     .job-title {
       margin-top: calc(-1em - 12px);
       margin-bottom: 32px;
@@ -617,11 +625,16 @@ nav {
     }
 
     .card-bootcamp-jobs {
-      padding: 0 48px;
+      padding: 0;
 
       border-left: 0;
       border-right: 0;
       border-radius: 0;
+
+      .job-wrapper {
+        margin: 0 auto;
+        max-width: 332px;
+      }
 
       .job-title {
         margin-top: calc(-1em - 20px);
@@ -668,8 +681,7 @@ nav {
   }
 
   @include mobile {
-    padding: 0 48px;
-    width: 100%;
+    max-width: 332px;
     h2 {
       margin-bottom: 30px;
     }
@@ -757,8 +769,7 @@ nav {
 
       &:hover {
         .coach-name {
-          transform: translateY(-16px);
-          transition: 0.3s;
+          transform: none;
         }
       }
     }
@@ -786,7 +797,7 @@ nav {
   }
 
   span {
-    font-size: 24px;
+    font-size: 1.25rem;
   }
   ul {
     margin-top: 12px;
@@ -797,6 +808,12 @@ nav {
 
     li {
       line-height: 1.75;
+    }
+  }
+
+  @include mobile {
+    ul {
+      margin-bottom: 40px;
     }
   }
 }
@@ -853,6 +870,20 @@ nav {
       opacity: 1;
     }
   }
+
+  @include mobile {
+    padding: 20px;
+
+    font-size: 24px;
+
+    span {
+      right: 0;
+    }
+
+    img {
+      display: none;
+    }
+  }
 }
 
 .qna {
@@ -872,41 +903,75 @@ nav {
   h2 {
     border-bottom: 2px solid $grey-200;
   }
-  li {
-    display: flex;
 
-    padding: 20px;
+  ul {
+    line-height: 1.5;
+    li {
+      display: flex;
 
-    border-width: 2px 0;
-    border-bottom: 2px solid $grey-200;
+      padding: 20px;
+
+      border-width: 2px 0;
+      border-bottom: 2px solid $grey-200;
+    }
   }
-}
 
-.qna-number {
-  flex-shrink: 0;
+  .qna-number {
+    flex-shrink: 0;
 
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 
-  background-color: $primary-1-100;
-  border: 2px solid $grey-700;
+    background-color: $primary-1-100;
+    border: 2px solid $grey-700;
 
-  font-size: 14px;
-  text-align: center;
-}
+    font-size: 14px;
+    text-align: center;
+  }
 
-.qna-content {
-  padding-top: 2px;
-  margin-left: 32px;
+  .qna-content {
+    padding-top: 2px;
+    margin-left: 32px;
 
-  div {
-    margin-bottom: 8px;
+    div {
+      margin-bottom: 8px;
+    }
+  }
+
+  @include mobile {
+    ul:nth-child(1) {
+      margin-top: 84px;
+    }
+
+    ul:nth-child(2) {
+      margin-top: 48px;
+      margin-bottom: 76px;
+    }
+    h2 {
+      border-bottom: 2px solid $grey-200;
+    }
+
+    ul {
+      li {
+        display: flex;
+
+        padding: 20px 0px;
+      }
+    }
+
+    .qna-content {
+      margin-left: 16px;
+    }
   }
 }
 
 .sponsor-title {
   position: relative;
   bottom: -32px;
+
+  @include mobile {
+    bottom: -20px;
+  }
 }
 
 .sponsor {
@@ -945,11 +1010,6 @@ nav {
 
   li:nth-last-child(1) {
     margin-right: 0;
-
-    &:hover {
-      transition: 0.3s;
-      transform: translateX(-100%);
-    }
   }
 
   .sponsor-img {
@@ -963,11 +1023,50 @@ nav {
     background-color: white;
     border-radius: 12px;
   }
+
+  @include mobile {
+    margin-top: 36px;
+    margin-bottom: 16px;
+
+    font-size: 14px;
+
+    .sponsor-img {
+      margin-bottom: 12px;
+      height: 120px;
+
+      img {
+        transform: scale(0.8);
+      }
+    }
+    li:nth-last-child(1) {
+      margin-right: 20px;
+    }
+  }
 }
 
 footer {
+  position: relative;
+
+  bottom: 0;
+
   padding: 36px 0;
   text-align: center;
+
+  span:nth-child(2) {
+    display: none;
+  }
+
+  @include mobile {
+    padding: 20px;
+    line-height: 1.75;
+
+    span:nth-child(1) {
+      display: none;
+    }
+    span:nth-child(2) {
+      display: inline;
+    }
+  }
 }
 
 .map {
