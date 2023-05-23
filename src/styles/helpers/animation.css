@@ -6,12 +6,28 @@
     transform: translateX(-50%);
   }
 }
+@keyframes slideByPosition {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
 @keyframes popOut {
   0% {
     transform: translateY(50%);
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes popOut-mb {
+  0% {
+    transform: translateY(50%) scaleX(-0.75) scaleY(0.75);
+  }
+  100% {
+    transform: translateY(0) scaleX(-0.75) scaleY(0.75);
   }
 }
 @keyframes tenkai {

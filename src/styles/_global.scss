@@ -39,7 +39,10 @@ ol {
   list-style-position: inside;
   li {
     margin-left: 1.5em;
-    text-indent: -1em;
+    text-indent: -1.25em;
+  }
+  li::marker {
+    font-family: "Noto Sans TC", sans-serif;
   }
 }
 

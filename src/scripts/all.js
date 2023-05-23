@@ -37,6 +37,8 @@ function toggleBtn(btnName, element) {
   if (btnName === "banner-space") {
     document.querySelector(".page-rocket").style = "display: none";
     document.querySelector(".page-space").style = "display: block";
+
+    setTimeout(() => spaceCarousel(), 1000);
   }
   ScrollTrigger.refresh();
 }
@@ -76,19 +78,21 @@ function toggleContent(name) {
 
 ScrollTrigger.refresh();
 
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".about",
-      markers: false,
-      pin: true,
-      scrub: true,
-      start: "top 15%",
-    },
-  })
-  .to(".jobs", {
-    transform: "translateY(calc(-100% * 1 / 3))",
-  });
+function aboutScroll() {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".about-rocket",
+        markers: false,
+        pin: true,
+        scrub: true,
+        start: "top 10vh",
+      },
+    })
+    .to(".job-list", {
+      transform: "translateY(calc(-100% * 1 / 3 - 32px))",
+    });
+}
 
 const expContent = [
   `
@@ -195,10 +199,9 @@ const expContent = [
   `,
 ];
 
-let totalWidth = -24;
+function spaceCarousel() {
+  let totalWidth = -24;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // 在此處放置取得元素寬度的程式碼
   const carouselItems = document.querySelectorAll(".carousel li");
   carouselItems.forEach((item) => {
     totalWidth += item.offsetWidth + 24;
@@ -218,4 +221,4 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "none",
     }
   );
-});
+}
