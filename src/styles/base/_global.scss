@@ -1,0 +1,48 @@
+// 載入外部字體
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;700&display=swap");
+
+// 全局樣式
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// 隱藏滾動條
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  position: relative;
+
+  color: $grey-700;
+  font-family: "Josefin Sans", "Noto Sans TC", sans-serif;
+  font-size: 16px;
+
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: $grey-700;
+  &:visited {
+    color: $grey-700;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  li {
+    margin-left: 1.5em;
+    text-indent: -1.25em;
+  }
+  li::marker {
+    font-family: "Noto Sans TC", sans-serif;
+  }
+}
