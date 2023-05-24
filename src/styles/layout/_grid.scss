@@ -1,3 +1,4 @@
+// grid colums and width
 $container-width: 1296px;
 $container-width-mb: 332px;
 $gutter: 24px;
@@ -5,6 +6,7 @@ $gutter-mb: 20px;
 $total-columns: 12;
 $total-columns-mb: 4;
 
+// generate classes of colunm width
 @for $i from 1 through 12 {
   $total-gutter: $gutter * ($total-columns - 1);
   $gutter-width: $gutter * ($i - 1);
@@ -25,6 +27,7 @@ $total-columns-mb: 4;
   }
 }
 
+// container and row setting
 .container {
   margin: 0 auto;
   max-width: $container-width;

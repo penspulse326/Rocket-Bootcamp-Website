@@ -1,0 +1,23 @@
+footer {
+  position: relative;
+  bottom: 0;
+
+  padding: 36px 0;
+  text-align: center;
+
+  span:nth-child(2) {
+    display: none;
+  }
+
+  @include mobile {
+    padding: 20px;
+    line-height: 1.75;
+
+    span:nth-child(1) {
+      display: none;
+    }
+    span:nth-child(2) {
+      display: inline;
+    }
+  }
+}

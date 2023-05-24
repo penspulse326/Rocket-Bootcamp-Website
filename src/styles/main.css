@@ -186,6 +186,39 @@ ol li::marker {
   font-family: "Noto Sans TC", sans-serif;
 }
 
+.bd-ex {
+  border-radius: 50px;
+}
+
+.bd-xl {
+  border-radius: 40px;
+}
+
+.bd-lg {
+  border-radius: 24px;
+}
+
+.bd-md {
+  border-radius: 16px;
+}
+
+.bd-sm {
+  border-radius: 12px;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.text-highlight {
+  box-shadow: inset 0 -0.875em #ffeea3;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 h1 {
   font-size: 48px;
   font-weight: 700;
@@ -234,39 +267,6 @@ h4 {
     font-size: 18px;
   }
 }
-.text-highlight {
-  box-shadow: inset 0 -0.875em #ffeea3;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.bd-ex {
-  border-radius: 50px;
-}
-
-.bd-xl {
-  border-radius: 40px;
-}
-
-.bd-lg {
-  border-radius: 24px;
-}
-
-.bd-md {
-  border-radius: 16px;
-}
-
-.bd-sm {
-  border-radius: 12px;
-}
-
-.center {
-  justify-content: center;
-  align-items: center;
-}
-
 @keyframes slide {
   0% {
     transform: translateX(0);
@@ -283,22 +283,6 @@ h4 {
     left: -100%;
   }
 }
-@keyframes popOut {
-  0% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes popOut-mb {
-  0% {
-    transform: translateY(50%) scaleX(-0.75) scaleY(0.75);
-  }
-  100% {
-    transform: translateY(0) scaleX(-0.75) scaleY(0.75);
-  }
-}
 @keyframes tenkai {
   100% {
     height: 100%;
@@ -313,22 +297,27 @@ nav {
   height: 64px;
   background: white;
   white-space: nowrap;
-  overflow: hidden;
-}
-nav .marquee {
-  display: flex;
-  position: absolute;
-  animation: slide 20s linear infinite;
+  overflow-x: hidden;
 }
 nav ul {
+  position: absolute;
   display: flex;
   padding: 20px 0;
   line-height: normal;
+  animation: slide 10s linear infinite;
 }
 nav ul span {
   margin: 0 16px;
 }
 
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .banner {
   background: url("../images/banner-bg.png");
 }
@@ -342,7 +331,6 @@ nav ul span {
 }
 
 .banner-btn {
-  position: relative;
   margin-top: 127px;
   margin-bottom: 160px;
   width: 33.950617284%;
@@ -350,6 +338,14 @@ nav ul span {
 }
 .banner-btn:hover {
   transform: translateY(-16px);
+}
+@media screen and (max-width: 428px) {
+  .banner-btn {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
 }
 .banner-btn .semi-circle {
   z-index: -99;
@@ -359,12 +355,6 @@ nav ul span {
   border-radius: 0 0 120px 120px;
 }
 @media screen and (max-width: 428px) {
-  .banner-btn {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    width: 100%;
-  }
   .banner-btn .semi-circle {
     flex-shrink: 0;
     width: 38px;
@@ -382,15 +372,34 @@ nav ul span {
   line-height: 1.75;
   cursor: pointer;
 }
+@media screen and (max-width: 428px) {
+  .banner-btn-content {
+    padding: 24px 0 24px 24px;
+    text-align: left;
+    border-radius: 16px;
+  }
+}
 .banner-btn-content h1 {
   line-height: normal;
 }
+@media screen and (max-width: 428px) {
+  .banner-btn-content h1 {
+    display: flex;
+  }
+}
 .banner-btn-content .btn-highlight {
-  display: none;
   position: absolute;
   top: -48px;
   right: -32px;
+  display: none;
   animation: popOut 0.3s ease;
+}
+@media screen and (max-width: 428px) {
+  .banner-btn-content .btn-highlight {
+    top: -24px;
+    left: -20px;
+    animation: popOut-mb 0.3s ease forwards;
+  }
 }
 .banner-btn-content .btn-info {
   display: flex;
@@ -426,31 +435,18 @@ nav ul span {
   margin-bottom: -50px;
 }
 @media screen and (max-width: 428px) {
-  .banner-btn-content {
-    padding: 24px 0 24px 24px;
-    text-align: left;
-  }
-  .banner-btn-content h1 {
-    display: flex;
-  }
-  .banner-btn-content .btn-highlight {
-    top: -24px;
-    left: -20px;
-    animation: popOut-mb 0.3s ease forwards;
-  }
   .banner-btn-content .btn-info {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     margin-top: 0;
   }
   .banner-btn-content .btn-info .btn-logo-sm {
     display: inline-block;
-    padding: 6px;
+    padding: 4px;
     margin-right: 8px;
     border: 2px solid #cdcdcd;
     border-radius: 50%;
+    box-sizing: border-box;
   }
   .banner-btn-content .btn-info .btn-logo-sm img {
     display: block;
@@ -459,7 +455,9 @@ nav ul span {
     border-radius: 50%;
   }
   .banner-btn-content .btn-info .btn-subtitle {
+    margin-left: 4px;
     margin-bottom: 0;
+    font-size: 1.25rem;
   }
   .banner-btn-content .btn-info .btn-logo {
     display: none;
@@ -499,10 +497,22 @@ nav ul span {
   }
 }
 
-.page {
-  display: none;
+@keyframes popOut {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
+@keyframes popOut-mb {
+  0% {
+    transform: translateY(50%) scaleX(-0.75) scaleY(0.75);
+  }
+  100% {
+    transform: translateY(0) scaleX(-0.75) scaleY(0.75);
+  }
+}
 .about-wrapper {
   padding: 60px 72px;
   line-height: 1.5;
@@ -651,6 +661,32 @@ nav ul span {
   .about-space .row {
     flex-direction: column-reverse;
   }
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  padding: 36px 0;
+  text-align: center;
+}
+footer span:nth-child(2) {
+  display: none;
+}
+@media screen and (max-width: 428px) {
+  footer {
+    padding: 20px;
+    line-height: 1.75;
+  }
+  footer span:nth-child(1) {
+    display: none;
+  }
+  footer span:nth-child(2) {
+    display: inline;
+  }
+}
+
+.page {
+  display: none;
 }
 
 .example {
@@ -1144,28 +1180,6 @@ nav ul span {
   }
 }
 
-footer {
-  position: relative;
-  bottom: 0;
-  padding: 36px 0;
-  text-align: center;
-}
-footer span:nth-child(2) {
-  display: none;
-}
-@media screen and (max-width: 428px) {
-  footer {
-    padding: 20px;
-    line-height: 1.75;
-  }
-  footer span:nth-child(1) {
-    display: none;
-  }
-  footer span:nth-child(2) {
-    display: inline;
-  }
-}
-
 .map {
   padding: 12px;
   height: 420px;
@@ -1253,7 +1267,8 @@ footer span:nth-child(2) {
 .space-display-content .space-service li img {
   margin-bottom: 24px;
 }
-.space-display-content .space-service li .icon-title {
+.space-display-content .space-service li span {
+  display: inline-block;
   margin-bottom: 8px;
   font-size: 18px;
 }
@@ -1304,9 +1319,7 @@ footer span:nth-child(2) {
     margin-right: 16px;
     width: 48px;
   }
-  .space-display-content .space-service li .icon-title {
-    margin-bottom: 8px;
-    font-size: 18px;
+  .space-display-content .space-service li span {
     line-height: normal;
   }
   .space-display-content .space-service li p {
