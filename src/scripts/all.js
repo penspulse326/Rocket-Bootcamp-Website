@@ -33,18 +33,22 @@ function toggleBtn(btnName, element) {
   if (btnName === "banner-rocket") {
     document.querySelector(".page-rocket").style = "display: block";
     document.querySelector(".page-space").style = "display: none";
+    setTimeout(() => {
+      checkIsMoblie();
+    }, 1000);
   }
   if (btnName === "banner-space") {
     document.querySelector(".page-rocket").style = "display: none";
     document.querySelector(".page-space").style = "display: block";
 
-    setTimeout(() => spaceCarousel(), 1000);
+    setTimeout(() => {
+      spaceCarousel();
+    }, 1000);
   }
   ScrollTrigger.refresh();
 }
 
 // toggle coach
-
 const coachList = document.querySelector(".bootcamp-coach-list");
 
 coachList.addEventListener("click", (e) => {
@@ -74,24 +78,6 @@ function toggleContent(name) {
   if (name === "casper") {
     content.innerHTML = expContent[3];
   }
-}
-
-ScrollTrigger.refresh();
-
-function aboutScroll() {
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: ".about-rocket",
-        markers: false,
-        pin: true,
-        scrub: true,
-        start: "top 10vh",
-      },
-    })
-    .to(".job-list", {
-      transform: "translateY(calc(-100% * 1 / 3 - 32px))",
-    });
 }
 
 const expContent = [
@@ -199,6 +185,86 @@ const expContent = [
   `,
 ];
 
+function mobileToggleCoach() {
+  const imageList = document.querySelector(".bootcamp-coach-list");
+  const imageDescription = document.querySelector(".coach-exp");
+
+  let totalWidth = -20;
+  let currentIndex = 0;
+
+  imageList.querySelectorAll("li").forEach((item) => {
+    totalWidth += item.clientWidth + 20;
+  });
+
+  imageList.addEventListener("scroll", function () {
+    const scrollLeft = imageList.scrollLeft;
+    const wrapperWidth = imageList.clientWidth;
+
+    // 計算可視區域中心位置的左右邊界
+    const centerLeft = scrollLeft + wrapperWidth / 2;
+    const centerRight = scrollLeft + wrapperWidth / 2;
+
+    // 找到滑動到畫面中央的圖片
+    let centeredImage = null;
+
+    const images = Array.from(imageList.querySelectorAll("li"));
+    for (const image of images) {
+      const imageLeft = image.offsetLeft;
+      const imageRight = image.offsetLeft + image.offsetWidth;
+
+      if (imageLeft <= centerLeft && imageRight >= centerRight) {
+        centeredImage = image;
+        break;
+      }
+    }
+
+    if (centeredImage) {
+      // 取得圖片的索引和說明
+      const imageIndex = Array.from(images).indexOf(centeredImage);
+      console.log(currentIndex, imageIndex);
+      if (currentIndex !== imageIndex) {
+        currentIndex = imageIndex;
+        document.querySelector(".coach-exp").innerHTML = expContent[imageIndex];
+      } else {
+      }
+    }
+  });
+}
+
+// about animation
+function aboutScroll() {
+  const targetHeight = document.querySelector(".about-rocket").offsetHeight;
+  const targetStart = (window.innerHeight - targetHeight) / 2;
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".about-rocket",
+        markers: false,
+        pin: true,
+        scrub: true,
+        start: `top: ${targetStart}`,
+      },
+    })
+    .to(".job-list", {
+      transform: "translateY(calc(-100% * 1 / 3 - 32px))",
+    });
+}
+
+// 檢查設備是否為手機或特定解析度
+function checkIsMoblie(
+  mobileEvent = mobileToggleCoach,
+  desktopEvent = aboutScroll
+) {
+  const isMobile = window.matchMedia("(max-width: 428px)").matches;
+  // 條件性地綁定事件處理程序
+  if (isMobile) {
+    mobileEvent();
+  } else {
+    desktopEvent();
+  }
+}
+
+// carousel animation
 function spaceCarousel() {
   let totalWidth = -24;
 

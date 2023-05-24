@@ -427,6 +427,12 @@ nav {
 
 .about-space {
   background-color: $primary-2-100;
+
+  @include mobile {
+    .row {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 .example {
@@ -958,7 +964,12 @@ nav {
         padding: 20px 0px;
       }
     }
+    .qna-number {
+      width: 20px;
+      height: 20px;
 
+      font-size: 12px;
+    }
     .qna-content {
       margin-left: 16px;
     }
@@ -1079,6 +1090,10 @@ footer {
     width: 100%;
     height: 100%;
   }
+
+  @include mobile {
+    height: 332px;
+  }
 }
 
 .space-display {
@@ -1097,6 +1112,16 @@ footer {
 
     line-height: normal;
   }
+
+  @include mobile {
+    h2 {
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+    h4 {
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .space-display-content {
@@ -1105,12 +1130,14 @@ footer {
   align-items: flex-start;
 
   .space-photo {
+    margin-bottom: 76px;
+
     li {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      margin-bottom: 52px;
+      margin-bottom: 36px;
     }
 
     img {
@@ -1131,11 +1158,15 @@ footer {
 
       p {
         color: $grey-600;
+        line-height: 1.5;
       }
     }
 
     li:nth-of-type(2) {
       flex-direction: row-reverse;
+    }
+    li:nth-last-child(1) {
+      margin-bottom: 0;
     }
   }
 
@@ -1164,6 +1195,78 @@ footer {
       }
     }
   }
+
+  @include mobile {
+    .space-photo {
+      margin-bottom: 48px;
+
+      li {
+        flex-direction: column;
+
+        margin-bottom: 40px;
+      }
+
+      img {
+        margin-bottom: 16px;
+        padding: 8px;
+        width: 100%;
+      }
+
+      .photo-text {
+        width: 100%;
+
+        div {
+          margin-bottom: 8px;
+
+          font-size: 1.25rem;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      li:nth-of-type(2) {
+        flex-direction: column;
+      }
+    }
+
+    .space-service {
+      flex-direction: column;
+
+      margin-top: 12px;
+      margin-bottom: 40px;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+
+        margin-bottom: 28px;
+        width: 100%;
+
+        text-align: left;
+
+        img {
+          margin-bottom: 0;
+          margin-right: 16px;
+          width: 48px;
+        }
+        .icon-title {
+          margin-bottom: 8px;
+
+          font-size: 18px;
+          line-height: normal;
+        }
+        p {
+          line-height: 1.5;
+        }
+      }
+
+      li:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .carousel-wrapper {
@@ -1183,6 +1286,14 @@ footer {
     margin-right: $gutter;
     max-width: calc(86px * 6 + $gutter * 5);
     width: calc(((86 + 24) * 6 - 24) / 1296 * 100%);
+  }
+
+  @include mobile {
+    margin-bottom: 48px;
+
+    li {
+      width: 100%;
+    }
   }
 }
 
@@ -1232,11 +1343,12 @@ footer {
     }
 
     .card-plan {
+      flex-shrink: 0;
+
       padding: 36px 80px;
 
       background-color: white;
       border: 2px solid transparent;
-      opacity: 0.5;
 
       text-align: center;
 
@@ -1280,5 +1392,72 @@ footer {
 
   a {
     margin-bottom: 80px;
+  }
+
+  @include mobile {
+    .plan-info {
+      margin-top: 36px;
+      margin-bottom: 20px;
+    }
+
+    .plan-hint {
+      padding: 12px 10px 24px 10px;
+      margin-bottom: 16px;
+      margin-left: 0;
+      width: 100%;
+
+      background-image: url("../images/promotion-sm.svg");
+
+      font-size: 14px;
+    }
+
+    .plan-list {
+      display: flex;
+
+      margin-bottom: 40px;
+
+      overflow-x: scroll;
+
+      .card-plan:nth-child(1) {
+        margin-right: 20px;
+      }
+
+      .card-plan {
+        padding: 32px;
+
+        div {
+          margin-bottom: 16px;
+
+          font-size: 24px;
+        }
+
+        h2 {
+          padding: 20px 40px;
+          margin-bottom: 16px;
+          width: 100%;
+
+          font-size: 24px;
+        }
+
+        ul {
+          font-size: 16px;
+          line-height: normal;
+
+          li {
+            display: flex;
+            align-items: center;
+            img {
+              content: url("../images/ic-check-sm.svg");
+              margin-right: 12px;
+            }
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+
+    a {
+      margin-bottom: 80px;
+    }
   }
 }
