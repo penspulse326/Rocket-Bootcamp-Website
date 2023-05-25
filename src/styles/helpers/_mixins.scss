@@ -1,25 +1,4 @@
-// 圓角
-@mixin bd-ex {
-  border-radius: 40px;
-}
-
-@mixin bd-lg {
-  border-radius: 24px;
-}
-
-@mixin bd-md {
-  border-radius: 16px;
-}
-
-@mixin bd-sm {
-  border-radius: 12px;
-}
-
-@mixin bd-xs {
-  border-radius: 8px;
-}
-
-// Media Query
+// 斷點
 @mixin mobile {
   @media screen and (max-width: 428px) {
     @content;

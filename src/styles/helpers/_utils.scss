@@ -14,6 +14,25 @@
 .bd-sm {
   border-radius: 12px;
 }
+// 圓角 mixin
+@mixin bd-ex {
+  border-radius: 50px;
+}
+@mixin bd-xl {
+  border-radius: 40px;
+}
+@mixin bd-lg {
+  border-radius: 24px;
+}
+@mixin bd-md {
+  border-radius: 16px;
+}
+@mixin bd-sm {
+  border-radius: 12px;
+}
+@mixin bd-xs {
+  border-radius: 8px;
+}
 
 // flex 相關
 .center {
@@ -25,11 +44,9 @@
 .text-highlight {
   box-shadow: inset 0 -0.875em $accent-1;
 }
-
 .bold {
   font-weight: 700;
 }
-
 h1 {
   font-size: 48px;
   font-weight: 700;
@@ -46,12 +63,14 @@ h4 {
   font-size: 28px;
   font-weight: 700;
 }
-
-.fz-lg {
+.font-ex {
+  font-size: 48px;
+  font-weight: 700;
+}
+.font-lg {
   font-size: 24px;
 }
-
-.fz-md {
+.font-md {
   font-size: 20px;
 }
 
@@ -68,10 +87,21 @@ h4 {
   h4 {
     font-size: 20px;
   }
-  .fz-lg {
+  .font-ex {
+    font-size: 32px;
+  }
+  .font-lg {
     font-size: 20px;
   }
-  .fz-md {
+  .font-md {
     font-size: 18px;
   }
+}
+
+// 行高
+@mixin line-h-lg {
+  line-height: 1.75;
+}
+@mixin line-h-md {
+  line-height: 1.5;
 }

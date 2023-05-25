@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-// 隱藏滾動條
 ::-webkit-scrollbar {
   display: none;
 }
@@ -21,6 +20,7 @@ body {
   font-size: 16px;
 
   letter-spacing: 0.02em;
+  @include line-h-md;
 }
 
 a {
@@ -44,5 +44,53 @@ ol {
   }
   li::marker {
     font-family: "Noto Sans TC", sans-serif;
+  }
+}
+
+// text
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+h4 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.fz-lg {
+  font-size: 24px;
+}
+
+.fz-md {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 428px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  .fz-lg {
+    font-size: 20px;
+  }
+  .fz-md {
+    font-size: 18px;
   }
 }

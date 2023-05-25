@@ -1,10 +1,10 @@
 @import "./base/reset";
 @import "./helpers/variables";
-@import "./layout/grid";
-@import "./base/global";
 @import "./helpers/utils";
 @import "./helpers/mixins";
 @import "./helpers/animation";
+@import "./layout/grid";
+@import "./base/global";
 @import "./layout/nav";
 @import "./layout/banner";
 @import "./layout/about";
@@ -76,7 +76,6 @@
   h2 {
     margin-top: -0.75em;
     margin-bottom: 12px;
-    line-height: normal;
   }
 
   @include mobile {
@@ -97,7 +96,6 @@
   box-shadow: 0px 2px 4px #e8e8e8;
 
   font-weight: 500;
-  line-height: normal;
 
   .time-recent {
     padding: 5px 12px 5px 0;
@@ -172,7 +170,6 @@
         box-shadow: 4px 4px 0 0 $grey-700;
 
         font-size: 24px;
-        line-height: normal;
       }
     }
 
@@ -427,7 +424,6 @@
   font-size: 36px;
   text-align: center;
   text-decoration: none;
-  line-height: normal;
 
   cursor: pointer;
 
@@ -660,13 +656,9 @@
   h2 {
     margin-top: 80px;
     margin-bottom: 60px;
-
-    line-height: normal;
   }
   h4 {
     margin-bottom: 24px;
-
-    line-height: normal;
   }
 
   @include mobile {
@@ -810,7 +802,6 @@
           width: 48px;
         }
         span {
-          line-height: normal;
         }
         p {
           line-height: 1.5;
@@ -868,8 +859,6 @@
   .plan-info {
     margin-top: 60px;
     margin-bottom: 36px;
-
-    line-height: normal;
 
     h2 {
       margin-bottom: 8px;
@@ -931,7 +920,6 @@
       ul {
         text-align: left;
         font-size: 20px;
-        line-height: normal;
 
         li {
           display: flex;
@@ -996,7 +984,6 @@
 
         ul {
           font-size: 16px;
-          line-height: normal;
 
           li {
             display: flex;
