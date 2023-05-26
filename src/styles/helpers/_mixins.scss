@@ -4,3 +4,9 @@
     @content;
   }
 }
+
+// 滿版 padding
+@mixin full-width-padding {
+  $padding-x: calc((100% - 332px) / 2);
+  padding: 0 $padding-x;
+}

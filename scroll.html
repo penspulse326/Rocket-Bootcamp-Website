@@ -9,88 +9,39 @@
   <body>
     <body>
       <div class="container">
-        <div class="scrollable-wrapper">
-          <ul class="image-list">
-            <li><img src="./src/images/carousel1-lg.png" alt="Image 1" /></li>
-            <li><img src="./src/images/carousel1-lg.png" alt="Image 2" /></li>
-            <li><img src="./src/images/carousel1-lg.png" alt="Image 3" /></li>
-            <li><img src="./src/images/carousel1-lg.png" alt="Image 4" /></li>
-          </ul>
-        </div>
-        <div class="description">
-          <p id="image-description"></p>
-        </div>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <!-- 其他 li 项目 -->
+        </ul>
       </div>
     </body>
     <style>
+      * {
+        border: 1px solid black;
+      }
       .container {
-        width: 100%;
-        overflow-x: scroll;
-      }
-
-      .scrollable-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .image-list {
+        width: 100vw;
+        overflow-x: auto; /* 横向溢出时显示滚动条 */
         display: flex;
-        flex-wrap: nowrap;
+        justify-content: center; /* 水平居中对齐 */
       }
 
-      .image-list li {
-        flex: 0 0 auto;
-        margin-right: 10px;
+      ul {
+        max-width: 1296px;
+        display: flex;
+        flex-wrap: wrap; /* 当 li 宽度总和超过 ul 宽度时换行 */
+        justify-content: space-between; /* li 等距分布 */
+        padding: 0;
+        margin: 0;
+        list-style: none;
       }
 
-      .description {
-        text-align: center;
-      }
-
-      .description p {
-        font-weight: bold;
+      li {
+        width: 80%;
+        margin-bottom: 20px; /* 为了显示 li 之间的间距 */
       }
     </style>
-    <script>
-      const scrollableWrapper = document.querySelector(".scrollable-wrapper");
-      const imageList = document.querySelector(".image-list");
-      const imageDescription = document.getElementById("image-description");
-
-      scrollableWrapper.addEventListener("scroll", function () {
-        const scrollLeft = scrollableWrapper.scrollLeft;
-        const wrapperWidth = scrollableWrapper.clientWidth;
-        const imageWidth = imageList.clientWidth;
-
-        // 計算可視區域中心位置的左右邊界
-        const centerLeft = scrollLeft + wrapperWidth / 2;
-        const centerRight = scrollLeft + wrapperWidth / 2;
-
-        // 找到滑動到畫面中央的圖片
-        let centeredImage = null;
-        const images = Array.from(imageList.querySelectorAll("li"));
-        for (const image of images) {
-          const imageLeft = image.offsetLeft;
-          const imageRight = image.offsetLeft + image.offsetWidth;
-
-          if (imageLeft <= centerLeft && imageRight >= centerRight) {
-            centeredImage = image;
-            break;
-          }
-        }
-
-        if (centeredImage) {
-          // 取得圖片的索引和說明
-          const imageIndex = Array.from(images).indexOf(centeredImage);
-          const imageAlt = centeredImage
-            .querySelector("img")
-            .getAttribute("alt");
-          imageDescription.textContent = `圖片 ${
-            imageIndex + 1
-          } 的說明: ${imageAlt}`;
-        } else {
-          imageDescription.textContent = "";
-        }
-      });
-    </script>
   </body>
 </html>

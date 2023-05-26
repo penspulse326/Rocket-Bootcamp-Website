@@ -51,8 +51,9 @@
 }
 //btn content box
 .banner-btn-content {
+  position: relative;
   padding: 0 24px;
-  width: 100%;
+  width: auto;
 
   background: white;
   border: 2px solid $grey-300;
@@ -67,22 +68,19 @@
     text-align: left;
     @include bd-md;
   }
-  .btn-highlight {
-    position: absolute;
-    top: -48px;
-    right: -32px;
+}
 
-    display: none;
+.btn-highlight {
+  position: absolute;
+  top: -48px;
+  right: -32px;
 
-    animation: popOut 0.3s ease;
-    @include mobile {
-      & {
-        top: -24px;
-        left: -20px;
+  animation: popOut 0.3s ease forwards;
+  @include mobile {
+    top: -24px;
+    left: -20px;
 
-        animation: popOut-mb 0.3s ease forwards;
-      }
-    }
+    animation: popOut-mb 0.3s ease forwards;
   }
 }
 //btn text and img

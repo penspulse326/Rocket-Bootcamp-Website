@@ -1,0 +1,59 @@
+.btn-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px;
+
+  border: 2px solid $grey-700;
+
+  font-size: 36px;
+  text-align: center;
+  text-decoration: none;
+  line-height: normal;
+
+  cursor: pointer;
+
+  span {
+    position: relative;
+    right: -32px;
+    transition: all 0.3s ease;
+  }
+  img {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    span {
+      transform: translate(-52px);
+    }
+    img {
+      opacity: 1;
+    }
+  }
+
+  @include mobile {
+    padding: 20px;
+
+    font-size: 24px;
+
+    span {
+      right: 0;
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+.btn-regist {
+  margin-bottom: -1.5em;
+
+  background-color: $primary-1-100;
+}
+
+.btn-form {
+  background-color: $primary-2-100;
+}

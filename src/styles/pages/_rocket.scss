@@ -1,1 +1,540 @@
+// example section
+.example {
+  margin-top: 92px;
+  margin-bottom: 120px;
 
+  text-align: center;
+
+  .row {
+    justify-content: center;
+  }
+
+  h2 {
+    margin-bottom: 28px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+  }
+  ul:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    margin-top: 48px;
+    margin-bottom: 92px;
+
+    .container {
+      max-width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      @include full-width-padding;
+      width: 100%;
+      overflow-y: scroll;
+
+      li {
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+    }
+    ul:nth-last-child(1) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+// bootcamp info section
+.bootcamp {
+  margin-bottom: 128px;
+
+  background-color: $grey-100;
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bootcamp-title {
+    margin-top: -0.75em;
+    margin-bottom: 12px;
+
+    line-height: normal;
+  }
+
+  @include mobile {
+    margin-bottom: 84;
+
+    .container {
+      max-width: 100%;
+    }
+  }
+}
+.bootcamp-time {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+
+  background: white;
+  box-shadow: 0px 2px 4px #e8e8e8;
+
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+
+  .time-recent {
+    padding: 5px 12px 5px 0;
+
+    border-right: 2px solid $grey-200;
+  }
+
+  div {
+    display: inline-block;
+    padding-left: 10px;
+  }
+
+  @include mobile {
+    max-width: 332px;
+
+    font-size: 14px;
+
+    div {
+      overflow-x: hidden;
+      span {
+        display: inline-block;
+        animation: timeSlide 10s linear infinite;
+      }
+    }
+  }
+}
+
+// bootcamp jobs description
+.bootcamp-jobs {
+  margin-bottom: 64px;
+
+  img {
+    margin-left: 40px;
+  }
+  .card-bootcamp-jobs:nth-child(2) {
+    img {
+      margin-left: 0;
+      margin-right: 50px;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+    width: 100%;
+
+    img {
+      margin: 0 0 24px 0;
+
+      transform: scale(0.76);
+    }
+
+    .card-bootcamp-jobs:nth-child(2) {
+      .job-content {
+        flex-direction: column;
+      }
+      img {
+        margin: 0;
+      }
+    }
+  }
+}
+.card-bootcamp-jobs {
+  padding: 0 48px 40px 48px;
+  margin-top: 80px;
+
+  background-color: white;
+  background-image: url("../images/training-bg.png");
+  border: 2px solid $grey-200;
+
+  .job-title {
+    margin-top: -2em;
+    margin-bottom: 32px;
+    margin-left: -8px;
+
+    h3 {
+      display: inline-block;
+
+      padding: 12px 40px;
+
+      background-color: white;
+      border: 2px solid $grey-700;
+      box-shadow: 4px 4px 0 0 $grey-700;
+
+      line-height: normal;
+    }
+  }
+  .job-content {
+    display: flex;
+    align-items: center;
+  }
+  .job-info {
+    .info-title {
+      display: inline-block;
+      margin-bottom: 16px;
+
+      border-bottom: 3px solid $grey-700;
+    }
+
+    .info-item {
+      margin-bottom: 36px;
+    }
+    .info-item:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+  @include mobile {
+    padding: 0;
+
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+
+    // wrapper is need because parent-node become width 100% with bg pic
+    .job-wrapper {
+      margin: 0 auto;
+      max-width: 332px;
+    }
+
+    .job-title {
+      margin-left: 0;
+
+      span {
+        padding: 12px 20px;
+        font-size: 20px;
+      }
+    }
+    .job-content {
+      flex-direction: column-reverse;
+    }
+    .job-info {
+      .info-title {
+        margin-bottom: 16px;
+      }
+      .info-item {
+        margin-bottom: 24px;
+      }
+      .info-item:nth-last-child(1) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
+.bootcamp-coaches {
+  h2 {
+    margin-bottom: 18px;
+  }
+
+  @include mobile {
+    width: 100%;
+    h2 {
+      @include full-width-padding;
+      margin-bottom: 30px;
+    }
+  }
+}
+.bootcamp-coach-list {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+
+  li {
+    padding-top: 20px;
+
+    cursor: pointer;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      height: 160px;
+
+      background-color: white;
+      border: 2px solid $grey-700;
+    }
+
+    &:hover {
+      .coach-name {
+        transform: translateY(-16px);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  li:nth-child(1) {
+    div {
+      background-color: $primary-1-100;
+    }
+  }
+
+  .coach-name {
+    align-self: flex-start;
+
+    padding: 16px 0;
+    margin-top: -22px;
+    margin-right: 20px;
+    width: 48px;
+
+    background-color: white;
+    border: 2px solid $grey-700;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 0 $grey-700;
+
+    line-height: 48px;
+    letter-spacing: 0.5em;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+
+    transition: 0.3s;
+  }
+
+  @include mobile {
+    @include full-width-padding;
+    margin-bottom: 24px;
+    width: 100%;
+
+    overflow-x: scroll;
+
+    li {
+      flex-shrink: 0;
+
+      margin-right: 28px;
+      height: 220px;
+      width: 100%;
+
+      div {
+        width: 100%;
+        height: 200px;
+
+        img {
+          height: 220px;
+        }
+      }
+
+      &:hover {
+        .coach-name {
+          transform: none;
+        }
+      }
+    }
+    li:nth-child(1) {
+      div {
+        background-color: $primary-1-100;
+      }
+    }
+    li:nth-last-child(1) {
+      margin-right: 0;
+    }
+    .coach-name {
+      font-size: 18px;
+    }
+  }
+}
+.coach-exp {
+  .exp-content {
+    height: 0px;
+    opacity: 0;
+    animation: tenkai 0.5s ease;
+    animation-fill-mode: forwards;
+  }
+  ul {
+    margin-top: 12px;
+    margin-left: 1.5em;
+    margin-bottom: 80px;
+
+    list-style-type: disc;
+    @include line-h-lg;
+  }
+
+  @include mobile {
+    @include full-width-padding;
+    ul {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// Q&A section
+.qna {
+  margin-bottom: 128px;
+
+  ul:nth-child(1) {
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    margin-bottom: 76px;
+
+    ul:nth-child(1) {
+      margin-bottom: 48px;
+    }
+  }
+}
+.qna-list {
+  li {
+    display: flex;
+
+    padding: 20px;
+
+    border-width: 2px 0;
+    border-bottom: 2px solid $grey-200;
+  }
+  h2 {
+    border-bottom: 2px solid $grey-200;
+  }
+
+  @include mobile {
+    h2 {
+      border-bottom: 2px solid $grey-200;
+    }
+    li {
+      display: flex;
+
+      padding: 20px 0px;
+    }
+  }
+}
+.qna-number {
+  flex-shrink: 0;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: $primary-1-100;
+  border: 2px solid $grey-700;
+
+  font-size: 14px;
+  text-align: center;
+
+  @include mobile {
+    width: 20px;
+    height: 20px;
+
+    font-size: 12px;
+  }
+}
+.qna-content {
+  margin-left: 32px;
+
+  div {
+    margin-bottom: 8px;
+  }
+
+  @include mobile {
+    margin-left: 16px;
+  }
+}
+
+// sponsor section
+.sponsor-title {
+  position: relative;
+  bottom: -32px;
+
+  @include mobile {
+    bottom: -20px;
+  }
+}
+
+.sponsor {
+  background-color: $grey-200;
+
+  overflow-x: scroll;
+
+  @media screen and (min-width: 1441px) {
+    overflow-x: auto;
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      justify-content: center;
+    }
+  }
+}
+
+.sponsor-list {
+  display: flex;
+
+  margin-top: 56px;
+  margin-bottom: 40px;
+
+  li {
+    flex-shrink: 0;
+    margin-right: 24px;
+
+    div:nth-last-child(1) {
+      margin-top: 8px;
+    }
+  }
+
+  li:nth-last-child(1) {
+    margin-right: 0;
+  }
+
+  .sponsor-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 16px;
+    height: 148px;
+
+    background-color: white;
+    border-radius: 12px;
+  }
+
+  @include mobile {
+    margin-top: 36px;
+    margin-bottom: 16px;
+
+    font-size: 14px;
+
+    .sponsor-img {
+      margin-bottom: 12px;
+      height: 120px;
+
+      img {
+        transform: scale(0.8);
+      }
+    }
+    li:nth-last-child(1) {
+      margin-right: 20px;
+    }
+  }
+}
+
+// bootcamp time animation
+@keyframes timeSlide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+// bootcamp coaches exp animation
+@keyframes tenkai {
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}

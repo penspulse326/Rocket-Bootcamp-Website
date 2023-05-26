@@ -35,7 +35,7 @@ $total-columns-mb: 4;
 
 @media screen and (max-width: 428px) {
   .container {
-    width: $container-width-mb;
+    max-width: $container-width-mb;
   }
   .row {
     flex-direction: column;
