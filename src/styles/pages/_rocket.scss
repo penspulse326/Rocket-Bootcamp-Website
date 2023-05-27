@@ -447,6 +447,9 @@
   position: relative;
   bottom: -32px;
 
+  @media screen and (max-width: 1440px) {
+    text-align: center;
+  }
   @include mobile {
     bottom: -20px;
   }
@@ -464,7 +467,6 @@
       display: flex;
       justify-content: center;
     }
-
     ul {
       justify-content: center;
     }
@@ -478,16 +480,11 @@
   margin-bottom: 40px;
 
   li {
-    flex-shrink: 0;
     margin-right: 24px;
 
     div:nth-last-child(1) {
       margin-top: 8px;
     }
-  }
-
-  li:nth-last-child(1) {
-    margin-right: 0;
   }
 
   .sponsor-img {
@@ -508,6 +505,11 @@
 
     font-size: 14px;
 
+    li {
+      flex-shrink: 0;
+
+      margin-right: 20px;
+    }
     .sponsor-img {
       margin-bottom: 12px;
       height: 120px;
@@ -516,8 +518,10 @@
         transform: scale(0.8);
       }
     }
+  }
+  @media screen and (max-width: 1440px) {
     li:nth-last-child(1) {
-      margin-right: 20px;
+      margin-right: 0;
     }
   }
 }
