@@ -420,6 +420,7 @@ nav ul span {
   position: absolute;
   top: -48px;
   right: -32px;
+  display: none;
   animation: popOut 0.3s ease forwards;
 }
 @media screen and (max-width: 428px) {
@@ -611,7 +612,7 @@ nav ul span {
   margin-bottom: 0px;
 }
 @media screen and (max-width: 428px) {
-  .jobs-wrapper .jobs-wrapper {
+  .jobs-wrapper {
     height: auto;
   }
 }
