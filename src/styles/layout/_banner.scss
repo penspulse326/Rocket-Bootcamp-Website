@@ -77,6 +77,8 @@
   top: -48px;
   right: -32px;
 
+  display: none;
+
   animation: popOut 0.3s ease forwards;
   @include mobile {
     top: -24px;
@@ -142,7 +144,6 @@
       align-items: center;
 
       margin-bottom: 8px;
-     
     }
     .btn-logo-sm {
       display: inline-block;

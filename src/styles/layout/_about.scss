@@ -69,9 +69,7 @@
   }
 
   @include mobile {
-    .jobs-wrapper {
-      height: auto;
-    }
+    height: auto;
   }
 }
 
