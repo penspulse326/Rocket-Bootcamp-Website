@@ -1,4 +1,4 @@
-import handleBannerClick from "./handleBannerClick.js";
+import handleBannerClick from "./bannerEvents.js";
 import {
   handleAboutScroll,
   handleCoachClick,
@@ -7,7 +7,7 @@ import {
 import { spaceCarousel } from "./spaceEvents.js";
 
 // execute event while page is loaded
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // loading event code
   handleBannerClick(pageState);
 });
