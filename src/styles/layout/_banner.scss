@@ -29,6 +29,10 @@
 
     margin: 0;
     width: 100%;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 // semi circle in btn

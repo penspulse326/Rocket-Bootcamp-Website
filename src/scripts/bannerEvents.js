@@ -10,7 +10,7 @@ export default function handleBannerClick(pageState) {
     if (targetBtn) {
       buttons.forEach((item) => {
         item.style.opacity = "0.5";
-        item.querySelector(".banner-btn-content").style.boxShadow = "0";
+        item.querySelector(".banner-btn-content").style.boxShadow = "none";
         item.querySelector(".btn-highlight").style.display = "none";
       });
 
@@ -28,7 +28,7 @@ function setBtnStyle(btnName, element) {
   element.querySelector(
     ".banner-btn-content"
   ).style.boxShadow = `8px 8px 0px 0px 
-      document.querySelector{btnName === "banner-rocket" ? "#bfc9f0" : "#eee5ff"} `;
+      ${btnName === "banner-rocket" ? "#bfc9f0" : "#eee5ff"} `;
 
   // show target highlight
   element.querySelector(".btn-highlight").style.display = "inline-block";

@@ -379,6 +379,9 @@ nav ul span {
     margin: 0;
     width: 100%;
   }
+  .banner-btn:hover {
+    transform: none;
+  }
 }
 
 .semi-circle {
