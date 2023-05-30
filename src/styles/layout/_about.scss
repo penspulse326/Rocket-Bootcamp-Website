@@ -111,15 +111,14 @@
   }
   li {
     margin-right: 12px;
-    h3 {
-      padding: 8px 16px;
 
-      color: $primary-1-400;
-      font-size: 1rem;
+    padding: 8px 16px;
 
-      border: 2px solid $primary-1-400;
-      border-radius: 24px;
-    }
+    color: $primary-1-400;
+    font-size: 1rem;
+
+    border: 2px solid $primary-1-400;
+    border-radius: 24px;
   }
 
   @include mobile {
@@ -140,9 +139,7 @@
     li {
       margin-right: 8px;
 
-      h3 {
-        font-size: 12px;
-      }
+      font-size: 12px;
     }
   }
 }

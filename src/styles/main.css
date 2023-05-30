@@ -654,8 +654,6 @@ nav ul span {
 }
 .card-info li {
   margin-right: 12px;
-}
-.card-info li h3 {
   padding: 8px 16px;
   color: #7f94e2;
   font-size: 1rem;
@@ -679,8 +677,6 @@ nav ul span {
   }
   .card-info li {
     margin-right: 8px;
-  }
-  .card-info li h3 {
     font-size: 12px;
   }
 }
